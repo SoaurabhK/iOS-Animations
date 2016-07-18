@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="USK_Animations" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +18,54 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame1" translatesAutoresizingMaskIntoConstraints="NO" id="Zu4-HT-6eN">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="313" id="Qrw-eV-o7q"/>
+                                    <constraint firstAttribute="height" constant="225" id="oK9-8g-E8k"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Qrw-eV-o7q"/>
+                                        <exclude reference="oK9-8g-E8k"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmX-p6-zpQ">
+                                <rect key="frame" x="247" y="480.5" width="107" height="30"/>
+                                <state key="normal" title="Start Animation"/>
+                                <connections>
+                                    <action selector="updateImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1lx-GV-C9a"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zu4-HT-6eN" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="5xh-uK-eXx"/>
+                            <constraint firstItem="Zu4-HT-6eN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7p9-cd-QWC"/>
+                            <constraint firstItem="wmX-p6-zpQ" firstAttribute="centerX" secondItem="Zu4-HT-6eN" secondAttribute="centerX" id="NUu-zH-gD7"/>
+                            <constraint firstItem="Zu4-HT-6eN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Oav-vN-Prz"/>
+                            <constraint firstItem="Zu4-HT-6eN" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="313:600" id="SfI-Xa-EzJ"/>
+                            <constraint firstItem="Zu4-HT-6eN" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="W77-Ch-a9K"/>
+                            <constraint firstItem="wmX-p6-zpQ" firstAttribute="top" secondItem="Zu4-HT-6eN" secondAttribute="bottom" multiplier="1.05" constant="8" symbolic="YES" id="ggn-o2-47T"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="SfI-Xa-EzJ"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="Zu4-HT-6eN" id="klM-Pz-kCI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="440" y="349"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="frame1" width="49" height="86"/>
+    </resources>
 </document>
